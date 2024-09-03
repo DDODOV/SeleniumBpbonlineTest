@@ -1,12 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace BpbonlineTest.Pages
 {
-    internal class BasePage
+    public class BasePage
     {
+        protected IWebDriver driver;
+        protected WebDriverWait wait;
+        protected readonly string baseUrl = "https://practice.bpbonline.com/";
+        public BasePage(IWebDriver driver)
+        {
+            this.driver = driver;
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        }
+
+        public IWebElement WaitForElement(By locator)
+        {
+            return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(locator));
+        }
+
+        //public void NavigateToHomePage()
+        //{
+        //    driver.Navigate().GoToUrl(baseUrl);
+        //}
     }
 }

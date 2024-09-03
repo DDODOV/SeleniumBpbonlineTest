@@ -1,0 +1,17 @@
+This project is a test automation suite developed for the public demo site https://practice.bpbonline.com. 
+The project is designed to test various functionalities of the site using Selenium WebDriver with the 
+Page Object Model (POM) pattern.
+
+Nuget Packages additionally installed:
+DotNetSeleniumExtras.WaitHelper
+Selenium WebDriver
+Selenium Support
+
+System test are conducted on 
+Operating System: Windows 10
+Development Environment: Visual Studio 2022 or later (recommended)
+.NET SDK: .NET 8
+Browser: Google Chrome (latest version)
+Note: The demo site is publicly accessible, and there are no specific system requirements beyond 
+what is needed to run the Selenium tests.
+All the test have separate documenatation in the Documentation folder.

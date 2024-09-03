@@ -1,6 +1,6 @@
-namespace BpbonlineTest.Tests
+namespace TestProject1
 {
-    public class BaseTest
+    public class Tests
     {
         [SetUp]
         public void Setup()

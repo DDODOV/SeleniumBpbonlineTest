@@ -18,10 +18,5 @@ namespace BpbonlineTest.Pages
         {
             return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(locator));
         }
-
-        //public void NavigateToHomePage()
-        //{
-        //    driver.Navigate().GoToUrl(baseUrl);
-        //}
     }
 }

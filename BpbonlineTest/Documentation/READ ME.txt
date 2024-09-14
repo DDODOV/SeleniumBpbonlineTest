@@ -15,3 +15,6 @@ Browser: Google Chrome (latest version)
 Note: The demo site is publicly accessible, and there are no specific system requirements beyond 
 what is needed to run the Selenium tests.
 All the test have separate documenatation in the Documentation folder.
+
+USERNAME: ivan123@abv.bg
+PASSWORD: test123

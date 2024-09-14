@@ -1,6 +1,7 @@
 ﻿using BpbonlineTest.Pages;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using System.Security.Cryptography.X509Certificates;
 
 
 namespace BpbonlineTestProject.Pages
@@ -10,17 +11,25 @@ namespace BpbonlineTestProject.Pages
         public HomePage(IWebDriver driver) : base(driver)
         {
         }
-
-        public IWebElement myCartContentBtn => WaitForElement(By.XPath("//span[text()='Cart Contents']"));
-        public IWebElement guestMessage => WaitForElement(By.XPath("//div//div[@class='contentText'][1]"));
-        public IWebElement logInLink => WaitForElement(By.XPath("//div[@class='contentText']/a[1]"));
-        public IWebElement createAccount => WaitForElement(By.XPath("//div[@class='contentText']/a[2]"));
-        public IWebElement myAccountLink => WaitForElement(By.XPath("//span[text()='My Account']"));
-
-        public void NavigateToHomePage()
+        public IWebElement cartContentBtn => WaitForElement(By.XPath("//a[@id='tdb1']"));
+        public IWebElement checkOutBtn => WaitForElement(By.XPath("//a[@id='tdb2']"));
+        public IWebElement myAccountBtn => WaitForElement(By.XPath("//a[@id='tdb3']"));
+        public IWebElement quickFindSearchBox => WaitForElement(By.XPath("//input[@name='keywords']"));
+        public IWebElement quickFindBtn => WaitForElement(By.XPath("//input[@alt='Quick Find']"));
+        public IWebElement contactUsBtn => WaitForElement(By.XPath("//a[text()='Contact Us']"));
+       
+        public void OpenToHomePage()
         {
             driver.Navigate().GoToUrl(baseUrl);
         }
 
+        public void DropDownMenuOption(string option)
+        {
+            IWebElement dropDownMenu = WaitForElement(By.XPath("//select[@name='manufacturers_id']"));
+
+            var selectElement = new SelectElement(dropDownMenu);
+
+            selectElement.SelectByText(option);
+        }
     }
 }

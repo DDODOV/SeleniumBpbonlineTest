@@ -10,8 +10,12 @@ namespace BpbonlineTestProject.BaseTests
     public class BaseTest
     {
         protected IWebDriver driver;
-        //public LogInPage logInPage;
+        public LogInPage logInPage;
         public HomePage homePage;
+        public ContactUsPage contactUsPage;
+        public ForgottenPassPage forgottenPassPage;
+        public CreateAccountPage createAccountPage;
+
         [OneTimeSetUp]
         public void Setup()
         {
@@ -30,7 +34,11 @@ namespace BpbonlineTestProject.BaseTests
 
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             homePage = new HomePage(driver);
-            //logInPage = new LogInPage(driver);
+            logInPage = new LogInPage(driver);
+            contactUsPage = new ContactUsPage(driver);
+            forgottenPassPage = new ForgottenPassPage(driver);
+            createAccountPage = new CreateAccountPage(driver);
+
         }
 
         [OneTimeTearDown]
